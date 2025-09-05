@@ -1,78 +1,123 @@
+/* ================================
+   THEME VARIABLES
+================================ */
+:root {
+  --bg-color: #0d1117;
+  --text-color: #e6edf3;
+  --nav-bg: #161b22;
+  --card-bg: #161b22;
+  --accent: #38bdf8;
+  --secondary: #c084fc;
+  --muted: #8b949e;
+}
+
+body.light-theme {
+  --bg-color: #f9f9f9;
+  --text-color: #1f2937;
+  --nav-bg: #ffffff;
+  --card-bg: #f3f4f6;
+  --accent: #2563eb;
+  --secondary: #9333ea;
+  --muted: #6b7280;
+}
+
+/* ================================
+   RESET + GLOBAL
+================================ */
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+
 body {
-  background-color: #0d1117;
-  color: #e6edf3;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: "Poppins", sans-serif;
 }
+
+/* ================================
+   NAVBAR
+================================ */
 nav {
-  position: fixed; 
-  top: 0; 
-  width: 100%; 
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
-  background-color: #161b22;
-  color: #e6edf3;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 80px;
 }
+
 nav ul {
   display: flex;
   justify-content: center;
 }
+
 nav ul li {
-  color: #e6edf3;
+  color: var(--text-color);
   list-style: none;
   margin: 0 23px;
 }
+
 nav ul li a {
   text-decoration: none;
-  color: #e6edf3;
+  color: var(--text-color);
 }
+
 nav ul li a:hover {
-  color: #38bdf8;
+  color: var(--accent);
   font-size: 1.02rem;
 }
+
+/* ================================
+   MAIN
+================================ */
 main hr {
   border: 0;
-  background: #9c97f1;
+  background: var(--secondary);
   height: 0.1px;
   margin: 40px 0;
 }
+
 .left {
   font-size: 1.5rem;
 }
+
 .first {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 150px 0;
 }
+
 .first > div {
   width: 30%;
 }
+
 .leftSection {
   font-size: 2rem;
 }
+
 .subtext {
   font-size: 1.1rem;
-  color: #8b949e; 
+  color: var(--muted);
   margin-top: 10px;
   line-height: 1.5;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #38bdf8; 
+  color: var(--accent);
   font-style: italic;
   font-weight: 500;
   margin-top: 12px;
   animation: fadeIn 2s ease-in;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -84,18 +129,16 @@ main hr {
   }
 }
 
-
 .buttonGroup {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
   margin-top: 20px;
 }
 
-
 .btn {
   padding: 12px 24px;
-  background-color: #38bdf8;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--bg-color);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -104,26 +147,24 @@ main hr {
   cursor: pointer;
 }
 
-
 .btn:hover {
-  background-color: #0d1117;
-  color: #38bdf8;
-  border: 2px solid #38bdf8;
+  background-color: var(--bg-color);
+  color: var(--accent);
+  border: 2px solid var(--accent);
 }
 
-
 .talkBtn {
-  background-color: #38bdf8; 
+  background-color: var(--accent);
 }
 
 .resumeBtn {
-  background-color: #c084fc; 
+  background-color: var(--secondary);
 }
 
 .resumeBtn:hover {
-  background-color: #0d1117;
-  color: #c084fc;
-  border: 2px solid #c084fc;
+  background-color: var(--bg-color);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
 }
 
 .rightSection img {
@@ -131,27 +172,33 @@ main hr {
   height: 350px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #c084fc;
+  border: 3px solid var(--secondary);
   box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
 }
 
 .purple {
-  color: #c084fc;
+  color: var(--secondary);
 }
 
 #element {
-  color: #c084fc;
+  color: var(--secondary);
 }
+
+/* ================================
+   ABOUT
+================================ */
 .second {
   max-width: 80vw;
   margin: auto;
   height: 90vh;
 }
+
 .second h1 {
   display: flex;
   justify-content: center;
   font-size: 1.9rem;
 }
+
 .aboutContent {
   display: flex;
   justify-content: space-between;
@@ -159,6 +206,7 @@ main hr {
   gap: 40px;
   padding: 20px 0;
 }
+
 .aboutContent .left {
   display: flex;
   justify-content: center;
@@ -171,7 +219,7 @@ main hr {
   width: 300px;
   height: auto;
   border-radius: 20px;
-  border: 2px solid #38bdf8;
+  border: 2px solid var(--accent);
   box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
   transition: transform 0.3s ease;
 }
@@ -179,6 +227,7 @@ main hr {
 .secondProfile:hover {
   transform: scale(1.05);
 }
+
 .aboutContent .right {
   display: flex;
   justify-content: center;
@@ -186,42 +235,45 @@ main hr {
   width: 50%;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #e6edf3;
+  color: var(--text-color);
   text-align: left;
   padding: 0 30px;
   margin-top: 30px;
 }
+
 .keyword {
-  color: #4fc3f7;
+  color: var(--accent);
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
-.third h1{
+
+/* ================================
+   SKILLS
+================================ */
+.third h1 {
   display: flex;
   justify-content: center;
   font-size: 1.9rem;
 }
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 40px 60px;
   justify-items: center;
 }
 
-
-
 .skill-item {
   text-align: center;
   transition: all 0.3s ease;
   padding: 20px;
-  border: 2px solid #38bdf8;
+  border: 2px solid var(--accent);
   border-radius: 16px;
-  background-color: #161b22;
+  background-color: var(--card-bg);
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.1);
   width: 160px;
 }
-
 
 .skill-item img {
   width: 80px;
@@ -230,22 +282,24 @@ main hr {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
 }
 
-
 .skill-item p {
-  color: #e6edf3;
+  color: var(--text-color);
   font-weight: 500;
   font-size: 1rem;
 }
 
 .skill-item:hover {
   transform: scale(1.05);
-  border-color: #0ea5e9; 
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); 
-  background-color: #1e293b; 
+  border-color: #0ea5e9;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  background-color: #1e293b;
   cursor: pointer;
 }
 
-.fourth h1{
+/* ================================
+   PROJECTS
+================================ */
+.fourth h1 {
   display: flex;
   justify-content: center;
   font-size: 1.9rem;
@@ -260,8 +314,8 @@ main hr {
 }
 
 .project-card {
-  background-color: #161b22;
-  border: 2px solid #38bdf8;
+  background-color: var(--card-bg);
+  border: 2px solid var(--accent);
   border-radius: 16px;
   width: 300px;
   padding: 20px;
@@ -281,14 +335,14 @@ main hr {
 }
 
 .project-card h3 {
-  color: #c084fc;
+  color: var(--secondary);
   margin: 10px 0 5px;
   font-size: 1.3rem;
 }
 
 .project-card p {
   font-size: 0.95rem;
-  color: #e6edf3;
+  color: var(--text-color);
   margin-bottom: 15px;
   line-height: 1.4;
 }
@@ -300,8 +354,8 @@ main hr {
 
 .project-links a {
   text-decoration: none;
-  background-color: #38bdf8;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--bg-color);
   padding: 8px 12px;
   border-radius: 6px;
   font-weight: 600;
@@ -309,9 +363,9 @@ main hr {
 }
 
 .project-links a:hover {
-  background-color: #0d1117;
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
+  background-color: var(--bg-color);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .project-links .disabled {
@@ -321,7 +375,10 @@ main hr {
   border: none;
 }
 
-.fifth h1{
+/* ================================
+   CONTACT
+================================ */
+.fifth h1 {
   display: flex;
   justify-content: center;
   font-size: 1.9rem;
@@ -349,9 +406,12 @@ main hr {
   cursor: pointer;
 }
 
+/* ================================
+   FOOTER
+================================ */
 footer {
-  background-color: #161b22;
-  color: #e6edf3;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
   text-align: center;
   padding: 20px;
   margin-top: 40px;
@@ -359,7 +419,19 @@ footer {
   border-top: 1px solid #30363d;
 }
 
-
-
+/* ================================
+   THEME TOGGLE BUTTON
+================================ */
+.smallBtn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+/* Global smooth transition for theme switch */
+* {
+  transition: background-color 0.4s ease, 
+              color 0.4s ease, 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+}
 
 
