@@ -1,0 +1,110 @@
+/* ================================
+   MAIN SECTION (Hero)
+================================ */
+main hr {
+  border: 0;
+  background: var(--secondary);
+  height: 0.1px;
+  margin: 40px 0;
+}
+
+.left {
+  font-size: 1.5rem;
+}
+
+.first {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 150px 0;
+}
+
+.first > div {
+  width: 30%;
+}
+
+.leftSection {
+  font-size: 2rem;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 12px;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: var(--accent);
+  color: var(--bg-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--bg-color);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.talkBtn {
+  background-color: var(--accent);
+}
+
+.resumeBtn {
+  background-color: var(--secondary);
+}
+
+.resumeBtn:hover {
+  background-color: var(--bg-color);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.rightSection img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
+}
+
+.purple {
+  color: var(--secondary);
+}
+
+#element {
+  color: var(--secondary);
+}

@@ -1,0 +1,48 @@
+/* ================================
+   SKILLS SECTION
+================================ */
+.third h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px 60px;
+  justify-items: center;
+}
+
+.skill-item {
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.1);
+  width: 160px;
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 12px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.skill-item p {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  background-color: #1e293b;
+  cursor: pointer;
+}

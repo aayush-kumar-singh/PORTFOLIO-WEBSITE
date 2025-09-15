@@ -4,61 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO</title>
+
+    <!-- Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body id="top">
+    <!-- ================================
+         HEADER + NAVIGATION BAR
+    ================================= -->
     <header>
       <nav>
+        <!-- Left side: Logo / Title -->
         <div class="left">Aayush | Developer Portfolio</div>
-        <div class="right">
-          <ul>
 
-            <li><a href="#" onclick="scrollToSection('top')">Home</a></li>
-            <li><a href="#" onclick="scrollToSection('about')">About</a></li>
+        <!-- Hamburger button (shows in mobile view) -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <!-- Navigation links (right side) -->
+        <div class="right">
+          <ul id="nav-links">
+            <li><a href="#top" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
             <li>
               <a
                 href="#"
                 onclick="alert('Service section is under construction.')"
-                >Service</a
               >
+                Service
+              </a>
             </li>
-            <li><a href="#" onclick="scrollToSection('skills')">Skills</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
             <li>
               <a
                 href="#"
                 onclick="alert('Experience section is under construction.')"
-                >Experience</a
               >
+                Experience
+              </a>
             </li>
-            <li>
-              <a href="#" onclick="scrollToSection('contact')">Contact</a>
-            </li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
             <li><a href="resume.pdf" target="_blank">Resume</a></li>
-            <li>
-  <button id="theme-toggle" class="btn smallBtn">🌙</button>
-</li>
 
+            <!-- Theme toggle (light/dark mode) -->
+            <li>
+              <button id="theme-toggle" class="btn smallBtn">🌙</button>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
+
     <main>
+      <!-- ================================
+           HERO SECTION
+      ================================= -->
       <section class="first">
+        <!-- Left side (intro + text content) -->
         <div class="leftSection">
           <div>Hello</div>
           <div>I'm <span class="purple">Aayush Kumar Singh</span></div>
           <div>a passionate</div>
+
+          <!-- Animated typing text -->
           <span id="element"></span>
+
+          <!-- Subtext (description) -->
           <div class="subtext">
-            <span style="color: #38bdf8"
-              >Currently pursuing B.Tech in Information Technology</span
-            >
+            <span style="color: #38bdf8">
+              Currently pursuing B.Tech in Information Technology
+            </span>
             with hands-on experience in software development. <br />
             <strong>Web Developer</strong> with a solid grip on
             <strong>Java & DSA</strong>. <br />
@@ -66,25 +90,39 @@
             <span style="color: #c084fc">AI/ML</span> with a focus on ethical
             innovation.
           </div>
+
+          <!-- Small tagline -->
           <p class="tagline">Code. Learn. Evolve.</p>
+
+          <!-- Buttons -->
           <div class="buttonGroup">
             <a href="#contact" class="btn talkBtn">Let's Talk</a>
-            <a href="resume.pdf" download class="btn resumeBtn"
-              >Download Resume</a
-            >
+            <a href="resume.pdf" download class="btn resumeBtn">
+              Download Resume
+            </a>
           </div>
         </div>
+
+        <!-- Right side (profile picture) -->
         <div class="rightSection">
           <img src="photo4.jpg" alt="Aayush's Profile" class="Profile" />
         </div>
       </section>
+
       <hr />
+
+      <!-- ================================
+           ABOUT SECTION
+      ================================= -->
       <section class="second" id="about">
         <h1>About</h1>
         <div class="aboutContent">
+          <!-- Left: Image -->
           <div class="left">
             <img src="photo.jpg" alt="Aayush's Profile" class="secondProfile" />
           </div>
+
+          <!-- Right: Text -->
           <div class="right">
             <p>
               I am Aayush, a passionate and dedicated student currently pursuing
@@ -101,10 +139,16 @@
           </div>
         </div>
       </section>
+
       <hr />
+
+      <!-- ================================
+           SKILLS SECTION
+      ================================= -->
       <section class="third" id="skills">
         <h1>Skills</h1>
         <div class="skills-grid">
+          <!-- Skill items -->
           <div class="skill-item">
             <img src="icons/html.svg" alt="HTML" />
             <p>HTML</p>
@@ -143,10 +187,16 @@
           </div>
         </div>
       </section>
+
       <hr />
-      <section class="fourth" id="contact">
+
+      <!-- ================================
+           PROJECTS SECTION
+      ================================= -->
+      <section class="fourth" id="projects">
         <h1>Projects</h1>
         <div class="projects-grid">
+          <!-- Each project card -->
           <div class="project-card">
             <img src="images/calculator.png" alt="Calculator" />
             <h3>Calculator App</h3>
@@ -163,6 +213,7 @@
               <a href="#" class="disabled">Live Demo</a>
             </div>
           </div>
+
           <div class="project-card">
             <img src="images/email_valid.png" alt="Email Validator" />
             <h3>Email Validator</h3>
@@ -179,6 +230,7 @@
               <a href="#" class="disabled">Live Demo</a>
             </div>
           </div>
+
           <div class="project-card">
             <img src="images/tic-tac-toe.png" alt="Tic-Tac-Toe" />
             <h3>Tic Tac Toe</h3>
@@ -195,6 +247,7 @@
               <a href="#" class="disabled">Live Demo</a>
             </div>
           </div>
+
           <div class="project-card">
             <img src="images/currency.png" alt="currency converter" />
             <h3>Currency Converter</h3>
@@ -211,6 +264,7 @@
               <a href="#" class="disabled">Live Demo</a>
             </div>
           </div>
+
           <div class="project-card">
             <img src="images/simon.png" alt="simon say" />
             <h3>Simon Say Game</h3>
@@ -229,9 +283,36 @@
           </div>
         </div>
       </section>
+
       <hr />
-      <section class="fifth">
+
+      <!-- ================================
+           CONTACT SECTION
+      ================================= -->
+      <section class="fifth" id="contact">
         <h1>Contact</h1>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Social Media Icons -->
         <div class="contact-icons">
           <a
             href="https://www.linkedin.com/in/aayush-kumarsingh/"
@@ -257,8 +338,24 @@
         </div>
       </section>
     </main>
-    <footer><p>&copy; 2025 Aayush Kumar Singh. All rights reserved.</p></footer>
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+    <footer>
+      <p>&copy; 2025 Aayush Kumar Singh. All rights reserved.</p>
+    </footer>
+
+    <!-- ================================
+         SCRIPTS
+    ================================= -->
+    <!-- Typing animation library -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
+    <!-- External JavaScript -->
+    <!-- JavaScript Files -->
+    <script src="js/typed-animation.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/contact-form.js"></script>
   </body>
 </html>

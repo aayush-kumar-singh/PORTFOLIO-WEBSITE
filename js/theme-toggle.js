@@ -1,24 +1,16 @@
-var typed = new Typed("#element", {
-  strings: ["Java DSA Learner", "Web Developer"],
-  typeSpeed: 50,
-  backSpeed: 50,
-  loop: true,
-});
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
+/* ================================
+   THEME TOGGLE (Dark / Light mode)
+================================ */
 const themeToggle = document.getElementById("theme-toggle");
 const currentTheme = localStorage.getItem("theme");
 
-// Apply saved theme
+// Apply saved theme on load
 if (currentTheme === "light") {
   document.body.classList.add("light-theme");
-  themeToggle.textContent = "☀️";
+  themeToggle.textContent = "☀️"; // sun icon
 }
 
+// Toggle theme on button click
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light-theme");
 
