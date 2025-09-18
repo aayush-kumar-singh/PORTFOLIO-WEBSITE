@@ -1,48 +1,13 @@
-# PORTFOLIO-WEBSITE
+
 ```
-PORTFOLIO-WEBSITE
-├─ bg.png
-├─ css
-│  ├─ about.css
-│  ├─ base.css
-│  ├─ contact.css
-│  ├─ footer.css
-│  ├─ header.css
-│  ├─ hero.css
-│  ├─ projects.css
-│  ├─ skills.css
-│  └─ style.css
-├─ icons
-│  ├─ c.svg
-│  ├─ contact.svg
-│  ├─ css.svg
-│  ├─ facebook-1.svg
-│  ├─ facebook.svg
-│  ├─ git.svg
-│  ├─ github.png
-│  ├─ gmail.svg
-│  ├─ html.svg
-│  ├─ instagram.svg
-│  ├─ java.svg
-│  ├─ javascript.svg
-│  ├─ linkedin.svg
-│  ├─ node.svg
-│  └─ vs-code.svg
-├─ images
-│  ├─ calculator.png
-│  ├─ currency.png
-│  ├─ email_valid.png
-│  ├─ simon.png
-│  └─ tic-tac-toe.png
+portfolio-website 3
+├─ asset
+│  ├─ aboutImg.jpg
+│  └─ homeImg.jpg
 ├─ index.html
-├─ js
-│  ├─ contact-form.js
-│  ├─ navigation.js
-│  ├─ theme-toggle.js
-│  └─ typed-animation.js
-├─ photo.jpg
-├─ photo4.jpg
+├─ package.json
 ├─ README.md
-└─ resume.pdf
+├─ script.js
+└─ styles.css
 
 ```

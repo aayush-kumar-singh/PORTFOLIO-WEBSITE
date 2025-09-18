@@ -1,361 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTFOLIO</title>
-
-    <!-- Google Fonts (Poppins) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- External CSS file -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-
-  <body id="top">
-    <!-- ================================
-         HEADER + NAVIGATION BAR
-    ================================= -->
-    <header>
-      <nav>
-        <!-- Left side: Logo / Title -->
-        <div class="left">Aayush | Developer Portfolio</div>
-
-        <!-- Hamburger button (shows in mobile view) -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-        <!-- Navigation links (right side) -->
-        <div class="right">
-          <ul id="nav-links">
-            <li><a href="#top" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li>
-              <a
-                href="#"
-                onclick="alert('Service section is under construction.')"
-              >
-                Service
-              </a>
-            </li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li>
-              <a
-                href="#"
-                onclick="alert('Experience section is under construction.')"
-              >
-                Experience
-              </a>
-            </li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="resume.pdf" target="_blank">Resume</a></li>
-
-            <!-- Theme toggle (light/dark mode) -->
-            <li>
-              <button id="theme-toggle" class="btn smallBtn">🌙</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- ================================
-           HERO SECTION
-      ================================= -->
-      <section class="first">
-        <!-- Left side (intro + text content) -->
-        <div class="leftSection">
-          <div>Hello</div>
-          <div>I'm <span class="purple">Aayush Kumar Singh</span></div>
-          <div>a passionate</div>
-
-          <!-- Animated typing text -->
-          <span id="element"></span>
-
-          <!-- Subtext (description) -->
-          <div class="subtext">
-            <span style="color: #38bdf8">
-              Currently pursuing B.Tech in Information Technology
-            </span>
-            with hands-on experience in software development. <br />
-            <strong>Web Developer</strong> with a solid grip on
-            <strong>Java & DSA</strong>. <br />
-            Passionate about learning
-            <span style="color: #c084fc">AI/ML</span> with a focus on ethical
-            innovation.
-          </div>
-
-          <!-- Small tagline -->
-          <p class="tagline">Code. Learn. Evolve.</p>
-
-          <!-- Buttons -->
-          <div class="buttonGroup">
-            <a href="#contact" class="btn talkBtn">Let's Talk</a>
-            <a href="resume.pdf" download class="btn resumeBtn">
-              Download Resume
-            </a>
-          </div>
-        </div>
-
-        <!-- Right side (profile picture) -->
-        <div class="rightSection">
-          <img src="photo4.jpg" alt="Aayush's Profile" class="Profile" />
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- ================================
-           ABOUT SECTION
-      ================================= -->
-      <section class="second" id="about">
-        <h1>About</h1>
-        <div class="aboutContent">
-          <!-- Left: Image -->
-          <div class="left">
-            <img src="photo.jpg" alt="Aayush's Profile" class="secondProfile" />
-          </div>
-
-          <!-- Right: Text -->
-          <div class="right">
-            <p>
-              I am Aayush, a passionate and dedicated student currently pursuing
-              B.Tech in Information Technology. I have a strong interest in
-              <span class="keyword">Data Structures and Algorithms (DSA)</span>,
-              <span class="keyword">Java Programming</span>,
-              <span class="keyword">Web Development</span>, and
-              <span class="keyword">AI & Machine Learning (AIML)</span>. I'm
-              constantly exploring new technologies and love building meaningful
-              projects that solve real-world problems. My goal is to grow as a
-              <span class="keyword">software developer</span> and contribute to
-              impactful innovations in tech.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- ================================
-           SKILLS SECTION
-      ================================= -->
-      <section class="third" id="skills">
-        <h1>Skills</h1>
-        <div class="skills-grid">
-          <!-- Skill items -->
-          <div class="skill-item">
-            <img src="icons/html.svg" alt="HTML" />
-            <p>HTML</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/css.svg" alt="CSS" />
-            <p>CSS</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/javascript.svg" alt="JavaScript" />
-            <p>JavaScript</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/node.svg" alt="Node JS" />
-            <p>Node JS</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/java.svg" alt="Java" />
-            <p>Java</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/c.svg" alt="C" />
-            <p>C</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/github.png" alt="GitHub" />
-            <p>GitHub</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/vs-code.svg" alt="vs-code" />
-            <p>VS-Code</p>
-          </div>
-          <div class="skill-item">
-            <img src="icons/git.svg" alt="Git" />
-            <p>Git</p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- ================================
-           PROJECTS SECTION
-      ================================= -->
-      <section class="fourth" id="projects">
-        <h1>Projects</h1>
-        <div class="projects-grid">
-          <!-- Each project card -->
-          <div class="project-card">
-            <img src="images/calculator.png" alt="Calculator" />
-            <h3>Calculator App</h3>
-            <p>
-              A basic calculator with full arithmetic functionality built using
-              HTML, CSS, JS.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/your-username/calculator"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="#" class="disabled">Live Demo</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush | Developer Portfolio</title>
+    <link rel="icon" type="image/png" href="asset/homeImg.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Aayush | Developer Portfolio</h2>
             </div>
-          </div>
-
-          <div class="project-card">
-            <img src="images/email_valid.png" alt="Email Validator" />
-            <h3>Email Validator</h3>
-            <p>
-              Validates email addresses using JavaScript Regex with instant
-              feedback. Designed with HTML and CSS.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/aayush-kumar-singh/EMAIL-VALIDATOR"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="#" class="disabled">Live Demo</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="asset/resume.pdf" class="nav-link" target="_blank" download>Resume</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-          </div>
-
-          <div class="project-card">
-            <img src="images/tic-tac-toe.png" alt="Tic-Tac-Toe" />
-            <h3>Tic Tac Toe</h3>
-            <p>
-              A classic Tic Tac Toe game with turn-based logic and win
-              detection. Developed using HTML, CSS, and JavaScript.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/aayush-kumar-singh/Tic-Tac-Toe"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="#" class="disabled">Live Demo</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <img src="images/currency.png" alt="currency converter" />
-            <h3>Currency Converter</h3>
-            <p>
-              A currency converter that fetches live exchange rates using an
-              API. Built using HTML, CSS, and JavaScript.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/aayush-kumar-singh/CURRENCY-CONVERTER"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="#" class="disabled">Live Demo</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <img src="images/simon.png" alt="simon say" />
-            <h3>Simon Say Game</h3>
-            <p>
-              A fun memory-based game that plays sequences of colors. Users
-              repeat the sequence to win.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/aayush-kumar-singh/Simon-Game"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="#" class="disabled">Live Demo</a>
-            </div>
-          </div>
         </div>
-      </section>
+    </nav>
 
-      <hr />
-
-      <!-- ================================
-           CONTACT SECTION
-      ================================= -->
-      <section class="fifth" id="contact">
-        <h1>Contact</h1>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-          <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Aayush Kumar Singh</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span>I'm a </span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Currently pursuing <span class="highlight-accent">B.Tech in Information Technology</span> with hands-on experience in software development.<br>
+                    <strong>Web Developer</strong> with a solid grip on <strong>Java & DSA</strong>.<br>
+                    Passionate about learning <span class="highlight-accent">AI/ML</span> with a focus on ethical innovation.
+                </p>
+                <div class="hero-meta">
+                    <span>MERN Stack Developer</span>
+                    <!-- <span class="separator">|</span>
+                    <span>SIH 2025 Participant</span> -->
+                </div>
+                <p class="hero-tagline">
+                    Code. Learn. Evolve.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card" data-tilt>
+                    <img src="asset/homeImg.jpg" alt="Aayush Kumar Singh" class="profile-img">
+                    <div class="profile-glow"></div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Social Media Icons -->
-        <div class="contact-icons">
-          <a
-            href="https://www.linkedin.com/in/aayush-kumarsingh/"
-            target="_blank"
-          >
-            <img src="icons/linkedin.svg" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/aayush-kumar-singh" target="_blank">
-            <img src="icons/github.png" alt="GitHub" />
-          </a>
-          <a href="https://www.facebook.com/share/1KjZiVVGEe/" target="_blank">
-            <img src="icons/facebook.svg" alt="Facebook" />
-          </a>
-          <a href="mailto:your-aayushkumarsingh548@gmail.com">
-            <img src="icons/gmail.svg" alt="Email" />
-          </a>
-          <a
-            href="https://www.instagram.com/theaayushks?igsh=MWJ1Yngxc3VrY2d5dg=="
-            target="_blank"
-          >
-            <img src="icons/instagram.svg" alt="Instagram" />
-          </a>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Hello! I'm Aayush Kumar Singh</h3>
+                    <p>
+                        A passionate and dedicated B.Tech in Information Technology student with a journey in programming that began with curiosity and evolved into a pursuit of solving real-world problems.
+                    </p>
+                    <p>
+                        I have a strong foundation in <strong>Data Structures and Algorithms (DSA)</strong>, <strong>Java Programming</strong>, and specialize in <strong>Web Development</strong>. I am always exploring new technologies, with a growing interest in the field of <strong>AI & Machine Learning (AIML)</strong>.
+                    </p>
+                    <p>
+                        When not coding, I'm actively contributing to open-source projects or sharing knowledge within the developer community. My goal is to continuously grow as a <strong>software developer</strong> and contribute to impactful innovations in tech.
+                    </p>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <!-- ================================
-         FOOTER
-    ================================= -->
-    <footer>
-      <p>&copy; 2025 Aayush Kumar Singh. All rights reserved.</p>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">What I offer</p>
+            </div>
+            <div class="under-construction">
+                <div class="construction-animation">
+                    <div class="gear gear1">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="gear gear2">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                </div>
+                <h3>This page is under construction</h3>
+                <p>We're working hard to bring you something amazing. Stay tuned!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">My technical expertise</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="90"></div></div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Data Structures & Algorithms</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="85"></div></div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                 <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="95"></div></div>
+                    <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <h3>CSS</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="90"></div></div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="88"></div></div>
+                    <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <h3>Node.js</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="75"></div></div>
+                    <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Express.js</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="80"></div></div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>C Programming</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="80"></div></div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                    <h3>Git</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="85"></div></div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="90"></div></div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-file-code"></i></div>
+                    <h3>VS Code</h3>
+                    <div class="skill-progress"><div class="progress-bar" data-progress="95"></div></div>
+                    <span class="skill-percentage">95%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="asset/calculator.png" alt="Calculator App">
+                    </div>
+                    <div class="project-content">
+                        <h3>Calculator App</h3>
+                        <p>A basic calculator with full arithmetic functionality built using HTML, CSS, and vanilla JavaScript.</p>
+                        <div class="project-links-bottom">
+                            <a href="#" class="btn-link" target="_blank" aria-label="Live Demo"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/aayush-kumar-singh/calculator" target="_blank" class="btn-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="asset/emailvalidator.jpg" alt="Email Validator">
+                    </div>
+                    <div class="project-content">
+                        <h3>Email Validator</h3>
+                        <p>Validates email addresses using JavaScript Regex with instant feedback. Designed with HTML and CSS.</p>
+                        <div class="project-links-bottom">
+                            <a href="#" class="btn-link" target="_blank" aria-label="Live Demo"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/aayush-kumar-singh/EMAIL-VALIDATOR" target="_blank" class="btn-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="asset/tic-tac-toe.png" alt="Tic-Tac-Toe Game">
+                    </div>
+                    <div class="project-content">
+                        <h3>Tic Tac Toe Game</h3>
+                        <p>A classic Tic Tac Toe game with turn-based logic and win detection. Developed using HTML, CSS, and JavaScript.</p>
+                        <div class="project-links-bottom">
+                            <a href="#" class="btn-link" target="_blank" aria-label="Live Demo"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/aayush-kumar-singh/Tic-Tac-Toe" target="_blank" class="btn-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="asset/currency.png" alt="Currency Converter">
+                    </div>
+                    <div class="project-content">
+                        <h3>Currency Converter</h3>
+                        <p>A currency converter that fetches live exchange rates using an API. Built using HTML, CSS, and JavaScript.</p>
+                        <div class="project-links-bottom">
+                            <a href="#" class="btn-link" target="_blank" aria-label="Live Demo"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/aayush-kumar-singh/CURRENCY-CONVERTER" target="_blank" class="btn-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="asset/simon.png" alt="Simon Say Game">
+                    </div>
+                    <div class="project-content">
+                        <h3>Simon Say Game</h3>
+                        <p>A fun memory-based game that plays sequences of colors. Users repeat the sequence to win.</p>
+                        <div class="project-links-bottom">
+                            <a href="#" class="btn-link" target="_blank" aria-label="Live Demo"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/aayush-kumar-singh/Simon-Game" target="_blank" class="btn-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="coming-soon-icon-wrapper">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>New Project Coming Soon</h3>
+                        <p>I'm currently working on something exciting and innovative. Please check back later for updates!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
+            <div class="under-construction">
+                <div class="coming-soon-animation">
+                    <div class="rocket">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
+                <h3>Coming Soon</h3>
+                <p>Professional experience section will be available shortly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>aayushkumarsingh@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 12345 67890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aayush-kumarsingh/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/aayush-kumar-singh" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/theaayushks?igsh=MWJ1Yngxc3VrY2d5dg==" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> 
+                        <a href="https://www.facebook.com/share/1KjZiVVGEe/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="mailto:aayushkumarsingh548@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aayush Kumar Singh. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- ================================
-         SCRIPTS
-    ================================= -->
-    <!-- Typing animation library -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- External JavaScript -->
-    <!-- JavaScript Files -->
-    <script src="js/typed-animation.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/contact-form.js"></script>
-  </body>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+</body>
 </html>
