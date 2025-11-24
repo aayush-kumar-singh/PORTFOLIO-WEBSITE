@@ -715,9 +715,7 @@ section {
   gap: 4rem;
 }
 
-.contact-info {
-  /* No specific styles needed here, just container for items/links */
-}
+
 
 .contact-item {
   display: flex;
