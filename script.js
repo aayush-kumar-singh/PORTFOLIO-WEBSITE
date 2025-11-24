@@ -77,7 +77,10 @@ function typeEffect() {
 }
 
 // Start typing animation
-typeEffect()
+document.addEventListener('DOMContentLoaded', () => {
+  typeEffect();
+});
+
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -100,21 +103,22 @@ window.addEventListener("scroll", () => {
 
   let current = ""
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop
+    // OffsetTop adjusted to account for fixed navbar height
+    const sectionTop = section.offsetTop - 70 
     const sectionHeight = section.clientHeight
-    if (scrollY >= sectionTop - 200) {
+    if (scrollY >= sectionTop) {
       current = section.getAttribute("id")
     }
   })
 
   navLinks.forEach((link) => {
     link.classList.remove("active")
-    if (link.getAttribute("href") === `#${current}`) {
+    // Ensure we are comparing '#sectionID' to the full href, or just 'sectionID' to current
+    if (link.getAttribute("href").includes(`#${current}`) && current !== "") {
       link.classList.add("active")
     }
   })
 })
-
 
 // Contact Form Handling
 const contactForm = document.getElementById("contactForm")
@@ -144,7 +148,7 @@ if (contactForm) {
   })
 }
 
-// Scroll to Top Functionality
+// Scroll to Top Functionality (CSS is injected for this, keep JS part)
 const scrollToTopBtn = document.createElement("button")
 scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>'
 scrollToTopBtn.className = "scroll-to-top"
@@ -185,14 +189,14 @@ scrollToTopBtn.addEventListener("click", () => {
   })
 })
 
-// Add hover effects for project cards
+// Add hover effects for project cards (Already handled in CSS, keeping simple JS interaction for completeness)
 document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("mouseenter", function () {
-    this.style.transform = "translateY(-10px)"
+    this.style.transform = "scale(1.03) translateY(-5px)";
   })
 
   card.addEventListener("mouseleave", function () {
-    this.style.transform = "translateY(0)"
+    this.style.transform = "translateY(0)";
   })
 })
 
@@ -203,8 +207,11 @@ const fadeInObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = "1"
-        entry.target.style.transform = "translateY(0)"
+        // Only modify if not already set to visible by a previous scroll (or initial view)
+        if (entry.target.style.opacity === "0") {
+            entry.target.style.opacity = "1"
+            entry.target.style.transform = "translateY(0)"
+        }
       }
     })
   },
@@ -214,30 +221,68 @@ const fadeInObserver = new IntersectionObserver(
   }
 )
 
-// Apply fade-in animation to all sections EXCEPT the 'about' section
-document.querySelectorAll("section:not(#about)").forEach((section) => {
-  section.style.opacity = "0"
-  section.style.transform = "translateY(30px)"
-  section.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-  fadeInObserver.observe(section)
-})
+// Apply initial styles and observe all sections for the standard fade-in
+document.querySelectorAll("section").forEach((section) => {
+  // Exclude 'about' since it's typically one of the first things seen
+  if (section.id !== 'about' && section.id !== 'home') {
+    section.style.opacity = "0"
+    section.style.transform = "translateY(30px)"
+    section.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+    fadeInObserver.observe(section)
+  } else if (section.id === 'about') {
+    // For the 'about' section itself (which contains .about-text.fade-in)
+    fadeInObserver.observe(section) 
+  }
+});
 
-// 2. Observer for individual elements that slide/fade in and for skill bars
+
+// 2. Observer for individual elements that slide/fade in and for skill bars + % text
 const elementObserver = new IntersectionObserver(
-  (entries) => {
+  (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        entry.target.classList.add("visible")
         
-        if (entry.target.classList.contains('skill-card')) {
-            const progressBar = entry.target.querySelector('.progress-bar');
-            if (progressBar) {
-                const progress = progressBar.getAttribute('data-progress');
-                setTimeout(() => {
-                    progressBar.style.width = progress + '%';
-                }, 200);
+        // Skill card animation: progress bar + percentage count-up
+        if (entry.target.classList.contains("skill-card")) {
+          const progressBar = entry.target.querySelector(".progress-bar")
+          const percentageEl = entry.target.querySelector(".skill-percentage")
+
+          if (progressBar) {
+            const progress = progressBar.getAttribute("data-progress")
+            // Use setTimeout to ensure the CSS transition for the skill card itself starts first
+            setTimeout(() => {
+              progressBar.style.width = progress + "%"
+            }, 200)
+          }
+
+          // Animate number only once
+          if (percentageEl && !percentageEl.dataset.animated) {
+            const targetValue = parseInt(
+              percentageEl.textContent.replace("%", "").trim()
+            )
+            let startValue = 0
+            const duration = 1500 // ms
+            const startTime = performance.now()
+            percentageEl.dataset.animated = "true"
+
+            function animateNumber(currentTime) {
+              const elapsed = currentTime - startTime
+              const fraction = Math.min(elapsed / duration, 1)
+              const currentValue = Math.floor(startValue + fraction * targetValue)
+              percentageEl.textContent = currentValue + "%"
+
+              if (fraction < 1) {
+                requestAnimationFrame(animateNumber)
+              }
             }
+
+            requestAnimationFrame(animateNumber)
+          }
         }
+        
+        // Stop observing once visible to prevent re-triggering animations on scroll back up
+        observer.unobserve(entry.target);
       }
     })
   },
@@ -246,7 +291,7 @@ const elementObserver = new IntersectionObserver(
   }
 )
 
-// SIMPLIFIED SELECTOR: This now finds any element with the 'fade-in' class
+// Observe all elements with 'fade-in' (including skill cards)
 document.querySelectorAll(".fade-in").forEach((el) => {
   elementObserver.observe(el)
 })

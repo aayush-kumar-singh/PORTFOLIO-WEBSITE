@@ -1,5 +1,5 @@
 /* =================================== */
-/* 1. RESET AND BASE STYLES           */
+/* 1. RESET AND BASE STYLES          */
 /* =================================== */
 * {
   margin: 0;
@@ -56,7 +56,7 @@ body {
 }
 
 /* =================================== */
-/* 2. NAVIGATION BAR                  */
+/* 2. NAVIGATION BAR                 */
 /* =================================== */
 .navbar {
   position: fixed;
@@ -164,12 +164,11 @@ body {
 }
 
 /* =================================== */
-/* 3. GENERAL SECTION STYLES          */
+/* 3. GENERAL SECTION STYLES         */
 /* =================================== */
 section {
   padding: 80px 0;
-  /* UPDATED: Decreased value for a more balanced space */
-  scroll-margin-top: 70px; 
+  scroll-margin-top: 70px;
 }
 
 .section-header {
@@ -227,7 +226,7 @@ section {
 }
 
 /* =================================== */
-/* 4. HERO SECTION                    */
+/* 4. HERO SECTION                   */
 /* =================================== */
 .hero {
   min-height: 100vh;
@@ -301,7 +300,7 @@ section {
 }
 
 .hero-tagline {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent-primary);
@@ -356,7 +355,7 @@ section {
 }
 
 /* =================================== */
-/* 5. ABOUT SECTION                   */
+/* 5. ABOUT SECTION                  */
 /* =================================== */
 .about {
   background: var(--bg-secondary);
@@ -382,12 +381,12 @@ section {
 }
 
 .about-text strong {
-    color: var(--accent-primary);
-    font-weight: 500;
+  color: var(--accent-primary);
+  font-weight: 500;
 }
 
 /* =================================== */
-/* 6. UNDER CONSTRUCTION SECTIONS     */
+/* 6. UNDER CONSTRUCTION SECTIONS    */
 /* =================================== */
 .services,
 .experience {
@@ -414,7 +413,7 @@ section {
 }
 
 /* =================================== */
-/* 7. SKILLS SECTION                  */
+/* 7. SKILLS SECTION                 */
 /* =================================== */
 .skills {
   background: var(--bg-secondary);
@@ -474,7 +473,7 @@ section {
 }
 
 /* =================================== */
-/* 8. PROJECTS SECTION (NEW STYLES)   */
+/* 8. PROJECTS SECTION (NEW STYLES)  */
 /* =================================== */
 .projects {
   background: var(--bg-primary);
@@ -498,14 +497,19 @@ section {
   overflow: hidden;
   animation: float 6s ease-in-out infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 360px;
 }
 
-.project-card:nth-child(2) { animation-delay: 2s; }
-.project-card:nth-child(3) { animation-delay: 4s; }
+.project-card:nth-child(2) {
+  animation-delay: 2s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 4s;
+}
 
 .project-card:hover {
-    transform: scale(1.03) translateY(-5px);
-    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
 }
 
 .project-image {
@@ -523,7 +527,7 @@ section {
 }
 
 .project-card:hover .project-image img {
-    filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 .project-content {
@@ -533,14 +537,14 @@ section {
 }
 
 .project-content h3 {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
 
 .project-content p {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   color: var(--text-secondary);
   line-height: 1.6;
   flex-grow: 1;
@@ -573,20 +577,25 @@ section {
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
   height: 150%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: conic-gradient(from 0deg, transparent 0%, var(--accent-primary), transparent 10%);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--accent-primary),
+    transparent 10%
+  );
   z-index: 1;
   animation: rotate-border 4s linear infinite;
 }
 
 .project-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px;
   background: var(--bg-tertiary);
@@ -594,28 +603,107 @@ section {
   z-index: 2;
 }
 
-.project-image, .project-content {
+.project-image,
+.project-content {
   position: relative;
   z-index: 3;
 }
 
 .coming-soon-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .coming-soon-icon-wrapper .fa-hammer {
-    font-size: 6rem;
-    color: var(--accent-primary);
-    animation: hitting 1.5s ease-in-out infinite;
+  font-size: 6rem;
+  color: var(--accent-primary);
+  animation: hitting 1.5s ease-in-out infinite;
 }
 
+/* ===== Coming Soon Flip & Glow ===== */
+.coming-soon-card {
+  perspective: 1000px;
+  border: none;
+  animation: pulseGlow 3s infinite;
+  overflow: visible;
+}
+
+.coming-soon-card::before,
+.coming-soon-card::after {
+  display: none;
+}
+
+.coming-soon-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.coming-soon-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.15),
+    rgba(16, 185, 129, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent-primary);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.coming-soon-back-content h3 {
+  font-size: 1.8rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+}
+
+.coming-soon-back-content p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Glowing Animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+  }
+}
 
 /* =================================== */
-/* 9. CONTACT SECTION                 */
+/* 9. CONTACT SECTION                */
 /* =================================== */
 .contact {
   background: var(--bg-primary);
@@ -625,6 +713,10 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+}
+
+.contact-info {
+  /* No specific styles needed here, just container for items/links */
 }
 
 .contact-item {
@@ -718,7 +810,7 @@ section {
 }
 
 /* =================================== */
-/* 10. FOOTER                         */
+/* 10. FOOTER                        */
 /* =================================== */
 .footer {
   background: var(--bg-tertiary);
@@ -732,26 +824,48 @@ section {
 }
 
 /* =================================== */
-/* 11. ANIMATIONS                     */
+/* 11. ANIMATIONS                    */
 /* =================================== */
 @keyframes hitting {
-    0% { transform: rotate(15deg); }
-    20% { transform: rotate(-10deg); }
-    40% { transform: rotate(15deg); }
-    60% { transform: rotate(-5deg); }
-    80% { transform: rotate(10deg); }
-    100% { transform: rotate(15deg); }
+  0% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes rotate-border {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .cursor {
@@ -759,19 +873,35 @@ section {
   color: var(--accent-primary);
 }
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
-.slide-in-left, .slide-in-right, .fade-in {
+.slide-in-left,
+.slide-in-right,
+.fade-in {
   opacity: 0;
   transition: all 0.6s ease;
 }
-.slide-in-left { transform: translateX(-50px); }
-.slide-in-right { transform: translateX(50px); }
-.fade-in { transform: translateY(30px); }
+.slide-in-left {
+  transform: translateX(-50px);
+}
+.slide-in-right {
+  transform: translateX(50px);
+}
+.fade-in {
+  transform: translateY(30px);
+}
 
-.slide-in-left.visible, .slide-in-right.visible, .fade-in.visible {
+.slide-in-left.visible,
+.slide-in-right.visible,
+.fade-in.visible {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
@@ -785,11 +915,19 @@ section {
   color: var(--accent-primary);
   margin: 0 1rem;
 }
-.gear1 { animation: rotate 3s linear infinite; }
-.gear2 { animation: rotate 3s linear infinite reverse; }
+.gear1 {
+  animation: rotate 3s linear infinite;
+}
+.gear2 {
+  animation: rotate 3s linear infinite reverse;
+}
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .coming-soon-animation {
@@ -809,8 +947,13 @@ section {
   transform: translateX(-50%);
 }
 @keyframes rocket {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -20px); }
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -20px);
+  }
 }
 .stars {
   position: absolute;
@@ -827,16 +970,33 @@ section {
   border-radius: 50%;
   animation: twinkle 1.5s ease-in-out infinite;
 }
-.star:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
-.star:nth-child(2) { top: 40%; right: 30%; animation-delay: 0.5s; }
-.star:nth-child(3) { top: 10%; right: 60%; animation-delay: 1s; }
+.star:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.star:nth-child(2) {
+  top: 40%;
+  right: 30%;
+  animation-delay: 0.5s;
+}
+.star:nth-child(3) {
+  top: 10%;
+  right: 60%;
+  animation-delay: 1s;
+}
 @keyframes twinkle {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* =================================== */
-/* 12. RESPONSIVE DESIGN              */
+/* 12. RESPONSIVE DESIGN             */
 /* =================================== */
 @media (max-width: 768px) {
   .hamburger {
@@ -861,14 +1021,17 @@ section {
   .nav-item {
     margin: 1rem 0;
   }
-  .hero-container, .about-content, .contact-content {
+  .hero-container,
+  .about-content,
+  .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   .hero-container {
     text-align: center;
   }
-  .skills-grid, .projects-grid {
+  .skills-grid,
+  .projects-grid {
     grid-template-columns: 1fr;
   }
   .hero-buttons {
@@ -883,7 +1046,8 @@ section {
   .section-title {
     font-size: 2rem;
   }
-  .container, .nav-container {
+  .container,
+  .nav-container {
     padding: 0 15px;
   }
 }
